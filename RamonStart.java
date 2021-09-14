@@ -1,8 +1,23 @@
 package startenYathzee;
 
+import java.util.Scanner;
+
+
+
+
+
 public class RamonStart {
 	public void start() 
 	{
-		System.out.println("Start in Ramon");
+		
 	}
-}
+	
+	
+		
+			
+			
+		
+		
+	
+	
+	}
