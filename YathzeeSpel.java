@@ -6,23 +6,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-
-
-
-
-
-
-
-
 public class YathzeeSpel {
 	int blokkeerArray[] = {0,0,0,0,0}; 
-	ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
+	static ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
 	
 	YathzeeSpel() {
 		for(int i=0; i<5; i++) {
 			Dobbelsteen dobbelsteen1 = new Dobbelsteen();
 			dobbelstenen.add(dobbelsteen1);
-			System.out.println(dobbelstenen);
 		}
 	}
 	
@@ -34,7 +25,7 @@ public class YathzeeSpel {
 		String startGame = sch.nextLine();
 		
 		while (!quitGame.equals("q")) {
-
+			
 			
 // 			'ENHANCED-FORLOOP'
 //			for (Dobbelsteen number: dobbelstenen){
@@ -46,6 +37,9 @@ public class YathzeeSpel {
 				dobbelstenen.get(i).value = dobbelstenen.get(i).werpen();
 				}
 			}
+			
+			Worp nieuweWorp = new Worp();
+			nieuweWorp.showResult();
 			
 			vasthouden();
 	
