@@ -7,10 +7,8 @@ public class LisetteStart {
 		
 		YathzeeSpel spel = new YathzeeSpel();
 		spel.spelen();
-
 		System.out.println("Buiten Whileloop");
-		int blokk[] = {1,0,1};
-		System.out.println(blokk);
+		
 
 	}
 }
