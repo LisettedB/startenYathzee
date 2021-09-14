@@ -6,6 +6,6 @@ public class Main {
 		RamonStart rs = new RamonStart();
 		ls.start();
 		rs.start();
-		System.out.println("Hij doet het!");
+		//System.out.println("Hij doet het!");
 	}
 }
