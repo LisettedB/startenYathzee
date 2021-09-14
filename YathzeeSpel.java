@@ -12,13 +12,12 @@ public class YathzeeSpel {
 		for(int i=0; i<5; i++) {
 			Dobbelsteen dobbelsteen1 = new Dobbelsteen();
 			dobbelstenen.add(dobbelsteen1);
-			
+			System.out.println(dobbelstenen);
 		}
 	}
 	
 	void spelen() {
-		
-		
+				
 		String quitGame = "";
 		
 		while (!quitGame.equals("q")) {

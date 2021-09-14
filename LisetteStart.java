@@ -9,6 +9,8 @@ public class LisetteStart {
 		spel.spelen();
 
 		System.out.println("Buiten Whileloop");
+		int blokk[] = {1,0,1};
+		System.out.println(blokk);
 
 	}
 }
