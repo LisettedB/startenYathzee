@@ -9,6 +9,7 @@ public class LisetteStart {
 		spel.spelen();
 		System.out.println("Buiten Whileloop");
 		
+
 	}
 }
 
