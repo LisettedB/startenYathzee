@@ -7,7 +7,7 @@ public class LisetteStart {
 		
 		YathzeeSpel spel = new YathzeeSpel();
 		spel.spelen();
-		//System.out.println("Buiten Whileloop");
+		System.out.println("Einde spel");
 		
 
 	}

@@ -1,13 +1,14 @@
 package startenYathzee;
 
 import java.util.Random;
+import java.awt.SystemColor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class YathzeeSpel {
-	int blokkeerArray[] = {0,0,0,0,0}; 
+	int blokkeerArray[] = {0,0,0,0,0};
 	static ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
 	
 	YathzeeSpel() {
@@ -18,7 +19,7 @@ public class YathzeeSpel {
 	}
 	
 	void spelen() {
-				
+		 		
 		//Game Start
 		String quitGame = "";
 		Scanner sch = new Scanner(System.in);
@@ -50,17 +51,16 @@ public class YathzeeSpel {
 //				
 //			}
 			
-			
-			
-			
-			
 			Speler huidigeSpeler = spelers.get(x);
 			System.out.println(huidigeSpeler.playerName + "'s Turn");
 			
+			Worp nieuweWorp = new Worp();
+				
 			//drie rondes per speler
 			for(int j =0; j<3;j++) {
+				
 				int roundCount = j+1;
-				System.out.println("ronde = " + );
+				System.out.println("ronde = " + roundCount);
 				
 				for(int i=0; i<5; i++) {
 					if(blokkeerArray[i] == 0) {
@@ -68,26 +68,31 @@ public class YathzeeSpel {
 					}
 				}
 				
-				Worp nieuweWorp = new Worp();
+				
 				huidigeSpeler.worpHistory.add(nieuweWorp.showResult());
 				System.out.println(huidigeSpeler.worpHistory);
 				
-				vasthouden();
-		
-				
-				
-				//Either stop by pressing q or enter te play another round
-				Scanner sc = new Scanner(System.in);
-				System.out.println("To Roll again, press enter.\nTo quit press q ");
-				quitGame = sc.nextLine();
+				vasthouden();	
 			}
 			
+			//Either stop by pressing q or enter te play another round
+			Scanner sc = new Scanner(System.in);
+			System.out.println("To go to next player, press enter.\nTo quit press q ");
+			quitGame = sc.nextLine();
+			
 			x++;
+			
 			if(x >= playerCount)
 			{
 				x=0;
 				System.out.println("test");
 			}
+			
+			for(int n=0; n<5; n++) {
+				blokkeerArray[n]=0;
+			}
+			
+			
 		}
 	}
 	
@@ -105,8 +110,12 @@ public class YathzeeSpel {
 			String extract2 = String.valueOf(extract1);
 			int extract3 = Integer.parseInt(extract2);
 			blokkeerArray[i] = extract3;
+		
 		}
 		
+		
 	}
+	
+	
 	
 }
