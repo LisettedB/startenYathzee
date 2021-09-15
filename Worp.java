@@ -14,7 +14,9 @@ public class Worp {
 		}
 		
 		//String resultString = Arrays.toString(result);
-		System.out.println(resultString);
+		System.out.println("Die numbers:	1 2 3 4 5");
+		System.out.println("-------------------------");
+		System.out.println("Dice rolled:	"+resultString);
 		return resultString;
 		//Speler.worpHistory.add(resultString);
 		
