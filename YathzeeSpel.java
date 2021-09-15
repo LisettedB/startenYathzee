@@ -98,7 +98,8 @@ public class YathzeeSpel {
 			//Either stop by pressing q or enter te play another round
 			Scanner sc = new Scanner(System.in);
 			System.out.println("	----------------\n	| END OF ROUND |\n	----------------");
-			System.out.println("To go to next player, press enter.\nTo quit press q ");
+			System.out.println("To go to next player, press enter.\nTo quit press 'q' "
+						  +"\n\n------------------------------------------------------------");
 			quitGame = sc.nextLine();
 			
 			x++;
@@ -122,7 +123,7 @@ public class YathzeeSpel {
 	void vasthouden() {
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Welke dobbelstenen wil je vasthouden?");
+		System.out.println("\nEnter the die number's you would like to hold");
 		String userInput = input.nextLine();
 		int checkArr[] = {1,2,3,4,5};
 		
