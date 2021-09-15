@@ -5,6 +5,8 @@ import java.awt.SystemColor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.List;
+
 
 
 public class YathzeeSpel {
@@ -100,17 +102,23 @@ public class YathzeeSpel {
 	
 	void vasthouden() {
 		
-		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Welke dobbelstenen wil je vasthouden?");
 		String userInput = input.nextLine();
+		int checkArr[] = {1,2,3,4,5};
 		
-		for(int i=0 ; i<5 ; i++) {
-			char extract1 = userInput.charAt(i);
+		for(int j=0; j<userInput.length(); j++) {
+			char extract1 = userInput.charAt(j);
 			String extract2 = String.valueOf(extract1);
 			int extract3 = Integer.parseInt(extract2);
-			blokkeerArray[i] = extract3;
-		
+			
+			for(int i=0; i<5; i++) {
+				if(checkArr[i] == extract3) {
+					blokkeerArray[(extract3-1)] = 1; 
+				}
+			}
+			
+			
 		}
 		
 		
