@@ -25,28 +25,45 @@ public class YathzeeSpel {
 		//Game Start
 		String quitGame = "";
 		Scanner sch = new Scanner(System.in);
-		System.out.println("Press enter to start.");
+		System.out.println(
+				"Welcome to Yathzee!"
+				+ "\n"
+				+ "Made by Lisette & Ramon"
+				+ "\n"
+				+ "Press enter to start.");
 		String startGame = sch.nextLine();
 		
 		//Add players
 		ArrayList<Speler> spelers = new ArrayList<Speler>();
-		System.out.println("How many players?");
+		System.out.println("How many players are going to play?\n"
+				+ "Please fill in the number below");
 		Scanner playerAmount = new Scanner(System.in);
 		int playerCount = playerAmount.nextInt(); 
 		
 		for(int i = 0; i< playerCount; i++) {
-			System.out.println("Name?");
+			int playerNum = i+1;
+			System.out.println("Player " + playerNum + ", what is your name?");
 			Scanner nameInput = new Scanner(System.in);
 			String inputString = nameInput.nextLine();
 			Speler nieuweSpeler = new Speler();
 			spelers.add(nieuweSpeler);
-			spelers.get(i).playerName = inputString;
-			
-			
+			spelers.get(i).playerName = inputString;	
 		}
-		
+		//Greeting all players by name Welcome: name1, name2, and name3
+		System.out.print("Welcome ");
+		if(playerCount>1) {
+			for (int i=0; i < (playerCount-1); i++ ) {
+				System.out.print(spelers.get(i).playerName + " ");
+			}
+				System.out.print("and " + spelers.get(playerCount-1).playerName);
+				System.out.println("");
+		} else {
+			System.out.print(spelers.get(0).playerName);
+			System.out.println("");
+
+		}
 		int x = 0;
-		while (!quitGame.equals("q")) {
+		while (!quitGame.equals("q") || !quitGame.equals("Q") ) {
 // 			'ENHANCED-FORLOOP'
 //			for (Dobbelsteen number: dobbelstenen){
 //				number.value = number.werpen();
@@ -54,7 +71,8 @@ public class YathzeeSpel {
 //			}
 			
 			Speler huidigeSpeler = spelers.get(x);
-			System.out.println(huidigeSpeler.playerName + "'s Turn");
+			System.out.println("\nIt is "+huidigeSpeler.playerName + "'s turn"
+					+ "\nYou have three rounds, rolling dice!");
 			
 			Worp nieuweWorp = new Worp();
 				
@@ -62,7 +80,7 @@ public class YathzeeSpel {
 			for(int j =0; j<3;j++) {
 				
 				int roundCount = j+1;
-				System.out.println("ronde = " + roundCount);
+				System.out.println("	-----------\n	| ROUND " + roundCount + " |\n	-----------");
 				
 				for(int i=0; i<5; i++) {
 					if(blokkeerArray[i] == 0) {
@@ -72,14 +90,16 @@ public class YathzeeSpel {
 				
 				
 				huidigeSpeler.worpHistory.add(nieuweWorp.showResult());
-				System.out.println(huidigeSpeler.worpHistory);
+				System.out.println("\n"+huidigeSpeler.playerName+"'s history: "+huidigeSpeler.worpHistory);
 				
 				vasthouden();	
 			}
 			
 			//Either stop by pressing q or enter te play another round
 			Scanner sc = new Scanner(System.in);
-			System.out.println("To go to next player, press enter.\nTo quit press q ");
+			System.out.println("	----------------\n	| END OF ROUND |\n	----------------");
+			System.out.println("To go to next player, press enter.\nTo quit press 'q' "
+						  +"\n\n------------------------------------------------------------");
 			quitGame = sc.nextLine();
 			
 			x++;
@@ -103,7 +123,7 @@ public class YathzeeSpel {
 	void vasthouden() {
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Welke dobbelstenen wil je vasthouden?");
+		System.out.println("\nEnter the die number's you would like to hold");
 		String userInput = input.nextLine();
 		int checkArr[] = {1,2,3,4,5};
 		
